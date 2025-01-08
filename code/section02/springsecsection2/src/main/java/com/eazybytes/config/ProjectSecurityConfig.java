@@ -17,8 +17,8 @@ public class ProjectSecurityConfig {
         http.authorizeHttpRequests((requests) -> requests
                 .requestMatchers("/myAccount", "/myBalance", "/myLoans", "/myCards").authenticated()
                 .requestMatchers("/notices", "/contact", "/error").permitAll());
-        http.formLogin(withDefaults());  //Formulario Login por default
-        http.httpBasic(withDefaults());  //Basic access authentication is a method for an HTTP user agent (eg a web browser) to provide a user name and password when making a request.
+        http.formLogin(withDefaults()); //Formulario Login por default
+        http.httpBasic(withDefaults()); //Basic access authentication is a method for an HTTP user agent (eg a web browser) to provide a user name and password when making a request.
         return http.build();
     }
 
